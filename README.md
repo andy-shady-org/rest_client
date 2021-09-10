@@ -12,10 +12,11 @@ no need to call
 ```
 You can use like:
 
-.. code-block:: python
+```python
   Client.get('/my_api', 'next_arg', name='bob', age=50)
-  
+```  
 
 This will result in URL parse of:
-  ``/my_api/next_arg?name=bob&age=50``
+
+  /my_api/next_arg?name=bob&age=50
 
