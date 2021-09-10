@@ -7,9 +7,9 @@ use:
 look at __getattr__, this is where the magic lies.
 
 no need to call 
-.. code-block:: python
+```python
   Client.query('/my_api', 'GET', dict(name='bob'), age=50)
-
+```
 You can use like:
 
 .. code-block:: python
