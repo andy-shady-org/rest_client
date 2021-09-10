@@ -101,7 +101,7 @@ class Client(object):
             self.session.verify = True
 
         # prepare the URL
-        self.url = 'https://{0}:{1}/api'.format(server, port)
+        self.url = 'https://{0}:{1}'.format(server, port)
         self.session.auth = BearerAuth(self.token)
         self.logger.debug('Infoblox Load Complete, loglevel set to %s', logging.getLevelName(self.logger.getEffectiveLevel()))
 
@@ -206,7 +206,7 @@ class Client(object):
             self._reply holds the response of a successful API call.
             self._error holds the error message of a failed API call.
 
-        :param resource: string containing the Infoblox object name. Eg. host:ipv4address
+        :param resource: string containing the endpoint name. Eg. ``/v3/some-call/get_them_all``
         :type resource: str
         :param method: string containing either 'get', 'post', 'put' or 'delete'. Defaults to 'get'.
         :type method: str
@@ -257,7 +257,7 @@ class Client(object):
                 elif method == 'delete':
                     self._reply = self.session.delete(url, verify=self.use_ssl, timeout=(10.0, 30))
             except (requests.ConnectionError, requests.exceptions.SSLError, requests.exceptions.Timeout, requests.exceptions.ReadTimeout, requests.exceptions.ConnectTimeout) as e:
-                error = "Server Error: {0} - {1}".format(e, url)
+                error = "HTTP Server Error: {0} - {1}".format(e, url)
                 if e.response and e.response.status_code:
                     raise ClientError(self.__class__.__name__, e.response.status_code, error)
                 else:
