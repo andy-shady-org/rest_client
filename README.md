@@ -39,6 +39,12 @@ In [5]: client.get('my_endpoint', 'arg1', name='bob', age=50)
 DEBUG:root:Query: age=50&name=bob
 INFO:root:Final URL: https://example.com:443/my_endpoint/arg1?age=50&name=bob, Method: get
 Out[5]: {'status_code': 200, 'data': '', 'ok': 1}
+
+In [6]: client.post('my_endpoint', 'arg1', name='bob', age=50)
+INFO:root:Final URL: https://example.com:443/api/my_endpoint/arg1, Method: post
+DEBUG:root:Payload: {'name': 'bob', 'age': 50}
+Out[6]: {'status_code': 200, 'data': {'name': 'bob', 'age': 50}, 'ok': 1}
+
 ```
 
 
