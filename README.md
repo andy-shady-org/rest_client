@@ -16,7 +16,7 @@ You can use like:
   Client.get('/my_api', 'next_arg', name='bob', age=50)
 ```  
 
-This will result in URL parse of:
+This will result in URL parse of::
 
-  <https://<server>:<port>/my_api/next_arg?name=bob&age=50>
+  "https://<server>:<port>/my_api/next_arg?name=bob&age=50"
 
