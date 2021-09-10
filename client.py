@@ -269,7 +269,7 @@ class Client(object):
 
         reauth = 0
         while reauth <= 2:
-            if 401 == self._reply.status_code and 'login' not in resource.split('/')[-1]:
+            if 401 == self._reply.status_code:
                 self.logger.debug('Attempting Re-Auth: %s attempt', reauth)
                 self._login()
                 reauth += 1
