@@ -18,5 +18,5 @@ You can use like:
 
 This will result in URL parse of:
 
-  </my_api/next_arg?name=bob&age=50>
+  <https://<server>:<port>/my_api/next_arg?name=bob&age=50>
 
